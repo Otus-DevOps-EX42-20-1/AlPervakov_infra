@@ -17,3 +17,7 @@ Host someinternalhost
     User alpervakov
     ProxyCommand ssh -W %h:%p bastion
     IdentityFile /home/alpervakov/.ssh/alpervakov
+
+
+testapp_IP = 34.90.69.109
+testapp_port = 9292
