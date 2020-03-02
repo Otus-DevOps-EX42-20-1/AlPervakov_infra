@@ -1,14 +1,21 @@
 {
+    "variables": {
+        "image_description": "ruby-app",
+        "disk_type": "SSD",
+        "disk_size": "10",
+        "network": "default",
+        "tags": "puma-server"
+    },
+
     "builders": [
         {
             "type": "googlecompute",
-            "project_id": "shaped-ship-269507",
             "image_name": "reddit-base-{{timestamp}}",
             "image_family": "reddit-base",
-            "source_image_family": "ubuntu-1604-lts",
             "zone": "europe-west1-b",
             "ssh_username": "alpervakov",
-            "machine_type": "g1-small"
+            "project_id": "{{user `project_id`}}",
+            "source_image_family": "{{user `source_image_family`}}"
         }
     ],
     "provisioners": [
