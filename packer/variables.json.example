@@ -1,7 +1,5 @@
 {
-    "variables": {
         "project_id": "shaped-test-12321312",
         "source_image_family": "ubuntu-1604-lts",
         "machine_type": "g1-small"
-    }
 }
