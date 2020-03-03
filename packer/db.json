@@ -1,0 +1,27 @@
+{
+    "variables": {
+        "image_description": "db",
+        "disk_type": "SSD",
+        "disk_size": "10",
+        "network": "default"
+    },
+
+    "builders": [
+        {
+            "type": "googlecompute",
+            "image_name": "db-base-{{timestamp}}",
+            "image_family": "db-base",
+            "zone": "europe-west1-b",
+            "ssh_username": "alpervakov",
+            "project_id": "{{user `project_id`}}",
+            "source_image_family": "{{user `source_image_family`}}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "scripts/install_mongodb.sh",
+            "execute_command": "sudo {{.Path}}"
+        }
+    ]
+}

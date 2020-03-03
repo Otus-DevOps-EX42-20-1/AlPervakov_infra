@@ -1,0 +1,28 @@
+{
+    "variables": {
+        "image_description": "ruby-app",
+        "disk_type": "SSD",
+        "disk_size": "10",
+        "network": "default",
+        "tags": "puma-server"
+    },
+
+    "builders": [
+        {
+            "type": "googlecompute",
+            "image_name": "app-base-{{timestamp}}",
+            "image_family": "app-base",
+            "zone": "europe-west1-b",
+            "ssh_username": "alpervakov",
+            "project_id": "{{user `project_id`}}",
+            "source_image_family": "{{user `source_image_family`}}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "scripts/install_ruby.sh",
+            "execute_command": "sudo {{.Path}}"
+        }
+    ]
+}
