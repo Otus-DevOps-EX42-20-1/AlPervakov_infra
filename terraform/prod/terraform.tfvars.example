@@ -1,4 +1,4 @@
-project         = "shaped-ship-269507"
+project         = "shaped-ship-666"
 public_key_path = "~/.ssh/alpervakov.pub"
 disk_image      = "reddit-base"
 
