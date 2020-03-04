@@ -21,3 +21,13 @@ Host someinternalhost
 
 testapp_IP = 34.90.69.109
 testapp_port = 9292
+
+#Packer
+Созданы конфигурационные файлы для создания образа VM
+
+#Terraform
+Созданы конфигурационные файлы для поднятия машин в GCP
+
+#Ansible
+Создан inventory файл с группами хостов для подключения к машинам в GCP
+Создан playbook clone.yml для скачивания приложения с github в рабочую диррекорию на VM appserver в GCP
